@@ -1,0 +1,34 @@
+<div id="searchbar">
+  <input (input)="getEnterprisesByClientAndName(clientId,$event.target.value)" type="text"
+    placeholder="Nome do empreendimento">
+</div>
+<div id="client_header" *ngIf="clientInfo">
+  <img src={{clientInfo.image_src}} />
+  <div id="client_info">
+    <div id="client_name">{{clientInfo.name}}</div>
+    <div id="client_id">{{clientInfo._id}}</div>
+  </div>
+  <div id="summary_counter" *ngIf='totals'>
+    <div id="enterprises_count">
+      <b>Empreendimentos:</b> {{totals.enterprises_count}}
+    </div>
+    <div id="realties_count">
+      <b>Imóveis:</b> {{totals.realties_count}}
+    </div>
+  </div>
+</div>
+<section *ngIf="clientInfo; else NotFound;">
+  <div id="deck" *ngIf="enterprises && enterprises.length; else NoEnterprises;">
+    <card *ngFor='let enterprise of enterprises;' [info]="enterprise"></card>
+  </div>
+  <ng-template #NoEnterprises>
+    <div id="no_enterprises">
+      Nenhum empreendimento encontrado com esse nome!
+    </div>
+  </ng-template>
+</section>
+<ng-template #NotFound>
+  <section id="no_client">
+    <div>O cliente que você tentou acessar não existe!</div>
+  </section>
+</ng-template>

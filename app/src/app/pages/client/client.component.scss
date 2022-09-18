@@ -1,0 +1,50 @@
+$grey: #4b4b4b;
+$light-grey: #b4b4b4;
+$blue: #3f51b5;
+$light-blue: #4457c2;
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: $grey;
+  font-size: 16px;
+}
+section {
+  overflow: scroll;
+  height: calc(100vh - 120px);
+}
+
+#no_clients {
+  text-align: center;
+  margin: 30px;
+}
+#searchbar {
+  background-color: $light-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  input {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 100%;
+  }
+}
+#summary_counter {
+  padding: 20px;
+  div {
+    text-align: center;
+  }
+}
+
+#deck {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex: {
+    wrap: wrap;
+    direction: row;
+  }
+}

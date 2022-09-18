@@ -1,0 +1,13 @@
+<div id="searchbar">
+  <input (input)="getByName($event.target.value)" type="text" placeholder="Nome do empreendimento">
+</div>
+<section>
+  <div id="deck" *ngIf="enterprises && enterprises.length; else NoEnterprises;">
+    <card [height]='360' *ngFor='let enterprise of enterprises;' [info]="enterprise"></card>
+  </div>
+  <ng-template #NoEnterprises>
+    <div id="no_enterprises">
+      Nenhum empreendimento encontrado com esse nome!
+    </div>
+  </ng-template>
+</section>

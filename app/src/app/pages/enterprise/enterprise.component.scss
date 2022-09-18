@@ -1,0 +1,93 @@
+$grey: #4b4b4b;
+$light-grey: #b4b4b4;
+$blue: #3f51b5;
+$light-blue: #4457c2;
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: $grey;
+  font-size: 16px;
+}
+section {
+  overflow: scroll;
+  height: calc(100vh - 120px);
+  #no_enterprises {
+    text-align: center;
+    margin: 30px;
+  }
+}
+#searchbar {
+  background-color: $light-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  input {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 100%;
+  }
+}
+#summary_counter {
+  padding: 20px;
+  div {
+    text-align: center;
+  }
+}
+
+#deck {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: {
+    wrap: wrap;
+    direction: row;
+  }
+}
+.card {
+  height: 100%;
+  padding: 30px;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px;
+  width: 200px;
+  box-shadow: 3px 3px 5px #b4b4b4;
+  img {
+    object-fit: contain;
+    height: 200px;
+  }
+  #_name {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #_id {
+    margin-top: 10px;
+    color: $light-grey;
+    text-align: center;
+  }
+  #_counters {
+    text-align: center;
+    margin-top: 15px;
+    b {
+      font-weight: 550;
+    }
+  }
+  #client_name {
+    text-align: center;
+    p {
+      font-weight: 550;
+      margin: 2px;
+    }
+  }
+  &:hover {
+    box-shadow: 7px 7px 10px #b4b4b4;
+    cursor: pointer;
+  }
+}

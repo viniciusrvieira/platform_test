@@ -1,0 +1,28 @@
+<div id="searchbar">
+  <input (input)="getByName($event.target.value)" type="text" placeholder="Nome do cliente">
+</div>
+<section>
+  <div id="summary_counter" *ngIf='totals'>
+    <div id="clients_count">
+      <b>Clientes:</b> {{totals.clients_count}}
+    </div>
+    <div id="enterprises_count">
+      <b>Empreendimentos:</b> {{totals.enterprises_count}}
+    </div>
+    <div id="realties_count">
+      <b>Imóveis:</b> {{totals.realties_count}}
+    </div>
+  </div>
+  <div id="deck" *ngIf="clients && clients.length; else NoClients;">
+    <card [clickable]="true" [height]='350'
+      (click)="accessClientDetails($event.currentTarget.querySelector('#id').textContent)"
+      *ngFor='let client of clients;' [info]="client">
+    </card>
+
+  </div>
+  <ng-template #NoClients>
+    <div id="no_clients">
+      Nenhum cliente encontrado com esse nome!
+    </div>
+  </ng-template>
+</section>
